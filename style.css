@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #FFB319;
+}
+
+
+.main-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h1 {
+  margin: 0;
+  font-family: 'Rampart One', 'Kaisei HarunoUmi', sans-serif;
+  font-size: 3.5rem;
+}
+h2 {
+  margin: 0;
+  font-family: 'Kaisei HarunoUmi', 'Rampart One', sans-serif;
+}
+
+.btn-start {
+  margin-top: 2rem; margin-bottom: 1rem;
+  border: 1px solid transparent; background: #eee; outline: none;
+  opacity: 0.9;
+  cursor: pointer;
+  padding: 10px 24px 10px 24px;
+  font-size: 1.1rem;
+  font-family: 'Kaisei HarunoUmi', sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.btn-start:hover {
+  border: 1px solid rgba(0,0,0,.6);
+  opacity: 0.8;
+}
+.btn-start:active { transform: scale(0.98); }
+
+.count-box {
+  margin: auto;
+  width: 80px;
+  height: 10px;
+}
+.count-box #counter {
+  display: block;
+  padding: 8px 10px 8px 10px;
+  background: rgba(255,255,255,.3);
+  border-radius: 10px;
+  font-family: 'Permanent Marker', 'Rampart One', sans-serif;
+  font-size: 4rem;
+  text-align: center;
+}
+
+/* FIELDS */
+.container {
+  width: 600px;
+  margin: 5rem auto 5rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: url(img/eggplant1.png), auto;
+}
+.container:active {
+  cursor: url(img/eggplant2.png), auto;
+}
+
+.field {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.field::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 100px;
+  background: url(img/dirt.svg) bottom center no-repeat;
+  background-size: 80%;
+  position: absolute;
+  /* bottom: -11px; */
+  bottom: -5px;
+}
+
+.field .figure {
+  width: 100%;
+  height: 100%;
+  background: url(img/loli1.png) bottom center no-repeat;
+  /* background-size: 40%; */
+  background-size: 0%;
+  position: absolute;
+  top: 100px;
+  transition: top 0.3s;
+}
+
+.field.show .figure {
+  background-size: 40%;
+  top: -15px;
+}
+
+/* responsive */
+@media (max-width: 575.98px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .field {
+    width: 170px;
+    height: 200px;
+  }
+
+
+  .field:nth-child(5), .field:nth-child(6) {
+    display: none; opacity: 0; visibility: hidden;
+  }
+
+  .field::after {
+    width: 200px;
+    height: 100px;
+    background-size: 80%;
+  }
+}
