@@ -1,5 +1,7 @@
 # whack-the-loli.github.io
 
+[https://dimaskuy.github.io/whack-the-loli.github.io/]
+
 You can whack-the-loli now! >//<
 
 Created with HTML, CSS, Vanilla JavaScript. <br>
